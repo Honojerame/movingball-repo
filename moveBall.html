@@ -1,0 +1,117 @@
+<div id="ball" style="
+  z-index:5;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:green"></div>
+<div id="ball2" style="
+  z-index:5;
+  position:absolute;
+  left:0px;
+  top:100px;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:green"></div>
+<div id="ball3" style="
+  z-index:5;
+  position:absolute;
+  left:0px;
+  top:0px;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:green"></div>
+
+
+<script>
+
+var velocity = 20;
+var position = 0;
+var reverse = false;
+var ball = document.getElementById('ball');
+var ball2 = document.getElementById('ball2');
+var ball3 = document.getElementById('ball3');
+var ball4 = document.getElementById('ball4');
+// YOUR CODE 
+// ----------------
+const firstBall = () => {
+  var Xmin = 0;
+  var Xmax = 400;
+ball.style.left = position + 'px'; 
+if(reverse === false) {
+  position = position + velocity;
+  ball.style.background = "#0000FF"
+  } if (reverse === true) {
+    position = position - velocity;
+    ball.style.background = "#ff0000"
+  } if(position > Xmax) {
+  reverse = true;
+} if (position === Xmin) {
+  reverse = false;
+}
+}
+setInterval(firstBall, 50)
+
+var velocity2 = 15;
+var position2 = 0;
+var reverse2 = false;
+const secondBall = () => {
+  var Xmin = 0;
+  var Xmax = 400;
+ball2.style.left = position2 + 'px'; 
+if(reverse2 === false) {
+  position2 = position2 + velocity2;
+  ball2.style.background = "#FF09C9"
+  } if (reverse2 === true) {
+    position2 = position2 - velocity2;
+    ball2.style.background = "#FAFF09"
+  } if(position2 > Xmax) {
+  reverse2 = true;
+} if (position2 === Xmin) {
+  reverse2 = false;
+}
+}
+setInterval(secondBall, 50)
+
+
+var velocity3 = 10;
+var position3 = 0;
+var positiony = 0;
+var reverse3 = false;
+var reverse4 = false;
+const thirdBall = () => {
+  var Xmin = 0;
+  var Xmax = 400;
+  var Ymin = 0;
+  var Ymax = 200;
+ball3.style.left = position3 + 'px'; 
+ball3.style.top = positiony + 'px';
+if(reverse3 === false) {
+  position3 = position3 + velocity3;
+  ball3.style.background = "#33AAFF"
+  } if (reverse3 === true) {
+    position3 = position3 - velocity3;
+    ball3.style.background = "#33FF34 "
+  } if(position3 > Xmax) {
+  reverse3 = true;
+} if (position3 === Xmin) {
+  reverse3 = false;
+}
+if(reverse4 === false) {
+  positiony = positiony + velocity3;
+  } if (reverse4 === true) {
+    positiony = positiony - velocity3;
+  }
+if(positiony > Ymax) {
+  reverse4 = true;
+} if (positiony === Ymin) {
+  reverse4 = false;
+}
+}
+setInterval(thirdBall, 50)
+
+</script>
